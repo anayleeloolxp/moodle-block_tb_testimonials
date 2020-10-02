@@ -198,7 +198,6 @@ class block_tb_testimonials extends block_base {
         $htmltestimonial .= '</div>';
 
         if ($settingleeloolxp->show_get_started) {
-
             $startedlink = $settingleeloolxp->get_started_link;
             $startedtxt = $settingleeloolxp->get_started_txt;
 
@@ -237,9 +236,5 @@ class block_tb_testimonials extends block_base {
         // Hide header if welcome area is show.
         $config = get_config('block_tb_testimonials');
         return !empty($config->showwelcomearea);
-    }
-
-    public function specialization() {
-        $this->title = get_string('displayname', 'block_tb_testimonials');
     }
 }
