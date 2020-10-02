@@ -120,81 +120,94 @@ class block_tb_testimonials extends block_base {
 
         $this->title = $title;
         $this->content = new stdClass();
-        $this->content->text = '<div class="tb_testimonials">';
 
-        $this->content->text .= '<div id="testimonial_box1" class="testimonial_box">';
+        $this->content->text = $this->get_testimonialcontent($settingleeloolxp);
 
-        $this->content->text .= '<div class="testimonial_img">';
-        $this->content->text .= '<img src="' . $settingleeloolxp->testimonials_1_img . '"/>';
-        $this->content->text .= '</div>';
+        $this->content->footer = '';
 
-        $this->content->text .= '<div class="testimonial_title">';
-        $this->content->text .= $settingleeloolxp->testimonials_1_txt;
-        $this->content->text .= '</div>';
+        return $this->content;
+    }
 
-        $this->content->text .= '<div class="testimonial_des">';
-        $this->content->text .= $settingleeloolxp->testimonials_1_cn;
-        $this->content->text .= '</div>';
+    /**
+     * Generate HTML for Testimonial
+     *
+     * @param string $settingleeloolxp Settings from LeelooLXP
+     * @return string
+     */
+    public function get_testimonialcontent($settingleeloolxp) {
+        $htmltestimonial = '<div class="tb_testimonials">';
 
-        $this->content->text .= '<div class="testimonial_pos">';
-        $this->content->text .= $settingleeloolxp->testimonials_1_cp;
-        $this->content->text .= '</div>';
+        $htmltestimonial .= '<div id="testimonial_box1" class="testimonial_box">';
 
-        $this->content->text .= '</div>';
+        $htmltestimonial .= '<div class="testimonial_img">';
+        $htmltestimonial .= '<img src="' . $settingleeloolxp->testimonials_1_img . '"/>';
+        $htmltestimonial .= '</div>';
 
-        $this->content->text .= '<div id="testimonial_box2" class="testimonial_box">';
+        $htmltestimonial .= '<div class="testimonial_title">';
+        $htmltestimonial .= $settingleeloolxp->testimonials_1_txt;
+        $htmltestimonial .= '</div>';
 
-        $this->content->text .= '<div class="testimonial_img">';
-        $this->content->text .= '<img src="' . $settingleeloolxp->testimonials_2_img . '"/>';
-        $this->content->text .= '</div>';
+        $htmltestimonial .= '<div class="testimonial_des">';
+        $htmltestimonial .= $settingleeloolxp->testimonials_1_cn;
+        $htmltestimonial .= '</div>';
 
-        $this->content->text .= '<div class="testimonial_title">';
-        $this->content->text .= $settingleeloolxp->testimonials_2_txt;
-        $this->content->text .= '</div>';
+        $htmltestimonial .= '<div class="testimonial_pos">';
+        $htmltestimonial .= $settingleeloolxp->testimonials_1_cp;
+        $htmltestimonial .= '</div>';
 
-        $this->content->text .= '<div class="testimonial_des">';
-        $this->content->text .= $settingleeloolxp->testimonials_2_cn;
-        $this->content->text .= '</div>';
+        $htmltestimonial .= '</div>';
 
-        $this->content->text .= '<div class="testimonial_pos">';
-        $this->content->text .= $settingleeloolxp->testimonials_2_cp;
-        $this->content->text .= '</div>';
+        $htmltestimonial .= '<div id="testimonial_box2" class="testimonial_box">';
 
-        $this->content->text .= '</div>';
+        $htmltestimonial .= '<div class="testimonial_img">';
+        $htmltestimonial .= '<img src="' . $settingleeloolxp->testimonials_2_img . '"/>';
+        $htmltestimonial .= '</div>';
 
-        $this->content->text .= '<div id="testimonial_box3" class="testimonial_box">';
+        $htmltestimonial .= '<div class="testimonial_title">';
+        $htmltestimonial .= $settingleeloolxp->testimonials_2_txt;
+        $htmltestimonial .= '</div>';
 
-        $this->content->text .= '<div class="testimonial_img">';
-        $this->content->text .= '<img src="' . $settingleeloolxp->testimonials_3_img . '"/>';
-        $this->content->text .= '</div>';
+        $htmltestimonial .= '<div class="testimonial_des">';
+        $htmltestimonial .= $settingleeloolxp->testimonials_2_cn;
+        $htmltestimonial .= '</div>';
 
-        $this->content->text .= '<div class="testimonial_title">';
-        $this->content->text .= $settingleeloolxp->testimonials_3_txt;
-        $this->content->text .= '</div>';
+        $htmltestimonial .= '<div class="testimonial_pos">';
+        $htmltestimonial .= $settingleeloolxp->testimonials_2_cp;
+        $htmltestimonial .= '</div>';
 
-        $this->content->text .= '<div class="testimonial_des">';
-        $this->content->text .= $settingleeloolxp->testimonials_3_cn;
-        $this->content->text .= '</div>';
+        $htmltestimonial .= '</div>';
 
-        $this->content->text .= '<div class="testimonial_pos">';
-        $this->content->text .= $settingleeloolxp->testimonials_3_cp;
-        $this->content->text .= '</div>';
+        $htmltestimonial .= '<div id="testimonial_box3" class="testimonial_box">';
 
-        $this->content->text .= '</div>';
+        $htmltestimonial .= '<div class="testimonial_img">';
+        $htmltestimonial .= '<img src="' . $settingleeloolxp->testimonials_3_img . '"/>';
+        $htmltestimonial .= '</div>';
+
+        $htmltestimonial .= '<div class="testimonial_title">';
+        $htmltestimonial .= $settingleeloolxp->testimonials_3_txt;
+        $htmltestimonial .= '</div>';
+
+        $htmltestimonial .= '<div class="testimonial_des">';
+        $htmltestimonial .= $settingleeloolxp->testimonials_3_cn;
+        $htmltestimonial .= '</div>';
+
+        $htmltestimonial .= '<div class="testimonial_pos">';
+        $htmltestimonial .= $settingleeloolxp->testimonials_3_cp;
+        $htmltestimonial .= '</div>';
+
+        $htmltestimonial .= '</div>';
 
         if ($settingleeloolxp->show_get_started) {
 
             $startedlink = $settingleeloolxp->get_started_link;
             $startedtxt = $settingleeloolxp->get_started_txt;
 
-            $this->content->text .= '<div class="test_get_started"><a href="' . $startedlink . '">' . $startedtxt . '</a></div>';
+            $htmltestimonial .= '<div class="test_get_started"><a href="' . $startedlink . '">' . $startedtxt . '</a></div>';
         }
 
-        $this->content->text .= '</div>';
+        $htmltestimonial .= '</div>';
 
-        $this->content->footer = '';
-
-        return $this->content;
+        return $htmltestimonial;
     }
 
     /**
