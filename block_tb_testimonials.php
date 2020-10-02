@@ -43,7 +43,7 @@ class block_tb_testimonials extends block_base {
     /**
      * Block Config Allow
      */
-    function instance_allow_config() {
+    public function instance_allow_config() {
         return true;
     }
 
@@ -183,7 +183,11 @@ class block_tb_testimonials extends block_base {
         $this->content->text .= '</div>';
 
         if ($settingleeloolxp->show_get_started) {
-            $this->content->text .= '<div class="test_get_started"><a href="' . $settingleeloolxp->get_started_link . '">' . $settingleeloolxp->get_started_txt . '</a></div>';
+
+            $startedlink = $settingleeloolxp->get_started_link;
+            $startedtxt = $settingleeloolxp->get_started_txt;
+
+            $this->content->text .= '<div class="test_get_started"><a href="' . $startedlink . '">' . $startedtxt . '</a></div>';
         }
 
         $this->content->text .= '</div>';
