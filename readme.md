@@ -26,7 +26,7 @@ Leeloo LXP
 
 Developer
 
-https://github.com/anayinfowin
+https://github.com/anayinfowind
 
 License
 =====================
