@@ -1,5 +1,5 @@
 # LeelooLXP Testimonials Block
-
+This block allows you to show the testimonials added in your Leeloo LXP account.
 Installation Instructions
 =========================
 
