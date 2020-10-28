@@ -148,13 +148,15 @@ class block_tb_testimonials extends block_base {
 
             $htmltestimonial .= '<div id="testimonial_box1" class="testimonial_box">';
 
+            $htmltestimonial .= '<div class="testimonial_title">';
+            $htmltestimonial .= $testimonial->testimonials_1_txt;
+            $htmltestimonial .= '</div>';
+
             $htmltestimonial .= '<div class="testimonial_img">';
             $htmltestimonial .= '<img src="' . $testimonial->testimonials_1_img . '"/>';
             $htmltestimonial .= '</div>';
 
-            $htmltestimonial .= '<div class="testimonial_title">';
-            $htmltestimonial .= $testimonial->testimonials_1_txt;
-            $htmltestimonial .= '</div>';
+            $htmltestimonial .= '<div class="testimonial_text">';
 
             $htmltestimonial .= '<div class="testimonial_des">';
             $htmltestimonial .= $testimonial->testimonials_1_cn;
@@ -162,6 +164,8 @@ class block_tb_testimonials extends block_base {
 
             $htmltestimonial .= '<div class="testimonial_pos">';
             $htmltestimonial .= $testimonial->testimonials_1_cp;
+            $htmltestimonial .= '</div>';
+
             $htmltestimonial .= '</div>';
 
             $htmltestimonial .= '</div>';
