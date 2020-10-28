@@ -112,11 +112,18 @@ class block_tb_testimonials extends block_base {
         $resposedata = json_decode($output);
         $settingleeloolxp = $resposedata->data->testimonials_data;
 
-        if (empty($settingleeloolxp->tst_block_title)) {
+        if (empty($settingleeloolxp->data->block_title)) {
             $title = get_string('displayname', 'block_tb_testimonials');
         } else {
-            $title = $settingleeloolxp->tst_block_title;
+            $title = $settingleeloolxp->data->block_title;
         }
+
+        $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_testimonials/js/jquery.min.js'));
+        $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_testimonials/js/owl.carousel.js'));
+        $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_testimonials/js/owlslider.js'));
+
+        $this->page->requires->css(new moodle_url($CFG->wwwroot . '/blocks/tb_testimonials/css/owl.carousel.min.css'));
+        $this->page->requires->css(new moodle_url($CFG->wwwroot . '/blocks/tb_testimonials/css/owl.theme.default.min.css'));
 
         $this->title = $title;
         $this->content = new stdClass();
@@ -135,67 +142,31 @@ class block_tb_testimonials extends block_base {
      * @return string
      */
     public function get_testimonialcontent($settingleeloolxp) {
-        $htmltestimonial = '<div class="tb_testimonials">';
+        $htmltestimonial = '<div class="tb_testimonials owl-carousel owl-theme">';
 
-        $htmltestimonial .= '<div id="testimonial_box1" class="testimonial_box">';
+        foreach($settingleeloolxp as $testimonial){
 
-        $htmltestimonial .= '<div class="testimonial_img">';
-        $htmltestimonial .= '<img src="' . $settingleeloolxp->testimonials_1_img . '"/>';
-        $htmltestimonial .= '</div>';
+            $htmltestimonial .= '<div id="testimonial_box1" class="testimonial_box">';
 
-        $htmltestimonial .= '<div class="testimonial_title">';
-        $htmltestimonial .= $settingleeloolxp->testimonials_1_txt;
-        $htmltestimonial .= '</div>';
+            $htmltestimonial .= '<div class="testimonial_img">';
+            $htmltestimonial .= '<img src="' . $testimonial->testimonials_1_img . '"/>';
+            $htmltestimonial .= '</div>';
 
-        $htmltestimonial .= '<div class="testimonial_des">';
-        $htmltestimonial .= $settingleeloolxp->testimonials_1_cn;
-        $htmltestimonial .= '</div>';
+            $htmltestimonial .= '<div class="testimonial_title">';
+            $htmltestimonial .= $testimonial->testimonials_1_txt;
+            $htmltestimonial .= '</div>';
 
-        $htmltestimonial .= '<div class="testimonial_pos">';
-        $htmltestimonial .= $settingleeloolxp->testimonials_1_cp;
-        $htmltestimonial .= '</div>';
+            $htmltestimonial .= '<div class="testimonial_des">';
+            $htmltestimonial .= $testimonial->testimonials_1_cn;
+            $htmltestimonial .= '</div>';
 
-        $htmltestimonial .= '</div>';
+            $htmltestimonial .= '<div class="testimonial_pos">';
+            $htmltestimonial .= $testimonial->testimonials_1_cp;
+            $htmltestimonial .= '</div>';
 
-        $htmltestimonial .= '<div id="testimonial_box2" class="testimonial_box">';
+            $htmltestimonial .= '</div>';
 
-        $htmltestimonial .= '<div class="testimonial_img">';
-        $htmltestimonial .= '<img src="' . $settingleeloolxp->testimonials_2_img . '"/>';
-        $htmltestimonial .= '</div>';
-
-        $htmltestimonial .= '<div class="testimonial_title">';
-        $htmltestimonial .= $settingleeloolxp->testimonials_2_txt;
-        $htmltestimonial .= '</div>';
-
-        $htmltestimonial .= '<div class="testimonial_des">';
-        $htmltestimonial .= $settingleeloolxp->testimonials_2_cn;
-        $htmltestimonial .= '</div>';
-
-        $htmltestimonial .= '<div class="testimonial_pos">';
-        $htmltestimonial .= $settingleeloolxp->testimonials_2_cp;
-        $htmltestimonial .= '</div>';
-
-        $htmltestimonial .= '</div>';
-
-        $htmltestimonial .= '<div id="testimonial_box3" class="testimonial_box">';
-
-        $htmltestimonial .= '<div class="testimonial_img">';
-        $htmltestimonial .= '<img src="' . $settingleeloolxp->testimonials_3_img . '"/>';
-        $htmltestimonial .= '</div>';
-
-        $htmltestimonial .= '<div class="testimonial_title">';
-        $htmltestimonial .= $settingleeloolxp->testimonials_3_txt;
-        $htmltestimonial .= '</div>';
-
-        $htmltestimonial .= '<div class="testimonial_des">';
-        $htmltestimonial .= $settingleeloolxp->testimonials_3_cn;
-        $htmltestimonial .= '</div>';
-
-        $htmltestimonial .= '<div class="testimonial_pos">';
-        $htmltestimonial .= $settingleeloolxp->testimonials_3_cp;
-        $htmltestimonial .= '</div>';
-
-        $htmltestimonial .= '</div>';
+        }
 
         if ($settingleeloolxp->show_get_started) {
             $startedlink = $settingleeloolxp->get_started_link;
