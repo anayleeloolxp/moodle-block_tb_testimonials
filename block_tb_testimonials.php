@@ -113,10 +113,10 @@ class block_tb_testimonials extends block_base {
         $resposedata = json_decode($output);
         $settingleeloolxp = $resposedata->data->testimonials_data;
 
-        if (empty($settingleeloolxp->data->block_title)) {
+        if (empty($resposedata->data->block_title)) {
             $title = get_string('displayname', 'block_tb_testimonials');
         } else {
-            $title = $settingleeloolxp->data->block_title;
+            $title = $resposedata->data->block_title;
         }
 
         $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_testimonials/js/jquery.min.js'));
@@ -129,7 +129,7 @@ class block_tb_testimonials extends block_base {
         $this->title = $title;
         $this->content = new stdClass();
 
-        $this->content->text = $this->get_testimonialcontent($settingleeloolxp);
+        $this->content->text = $this->get_testimonialcontent($resposedata);
 
         $this->content->footer = '';
 
@@ -139,13 +139,16 @@ class block_tb_testimonials extends block_base {
     /**
      * Generate HTML for Testimonial
      *
-     * @param string $settingleeloolxp Settings from LeelooLXP
+     * @param string $resposedata Settings from LeelooLXP
      * @return string
      */
-    public function get_testimonialcontent($settingleeloolxp) {
-        $htmltestimonial = '<div class="tb_testimonials owl-carousel owl-theme">';
+    public function get_testimonialcontent($resposedata) {
 
-        foreach($settingleeloolxp as $testimonial){
+        $htmltestimonial = '<div class="tb_testimonials_container">';
+        
+        $htmltestimonial .= '<div class="tb_testimonials owl-carousel owl-theme">';
+
+        foreach($resposedata->data->testimonials_data as $testimonial){
 
             $htmltestimonial .= '<div id="testimonial_box1" class="testimonial_box">';
 
@@ -173,9 +176,11 @@ class block_tb_testimonials extends block_base {
 
         }
 
-        if ($settingleeloolxp->show_get_started) {
-            $startedlink = $settingleeloolxp->get_started_link;
-            $startedtxt = $settingleeloolxp->get_started_txt;
+        $htmltestimonial .= '</div>';
+
+        if ($resposedata->data->show_get_started) {
+            $startedlink = $resposedata->data->get_started_link;
+            $startedtxt = $resposedata->data->get_started_txt;
 
             $htmltestimonial .= '<div class="test_get_started"><a href="' . $startedlink . '">' . $startedtxt . '</a></div>';
         }
