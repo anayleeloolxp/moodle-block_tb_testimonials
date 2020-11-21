@@ -60,6 +60,7 @@ class block_tb_testimonials extends block_base {
      * @return stdClass contents of block
      */
     public function get_content() {
+        global $CFG;
 
         if ($this->content !== null) {
             return $this->content;
@@ -75,7 +76,7 @@ class block_tb_testimonials extends block_base {
         $options = array(
             'CURLOPT_RETURNTRANSFER' => true,
             'CURLOPT_HEADER' => false,
-            'CURLOPT_POST' => count($postdata),
+            'CURLOPT_POST' => 1,
         );
 
         if (!$output = $curl->post($url, $postdata, $options)) {
@@ -101,7 +102,7 @@ class block_tb_testimonials extends block_base {
         $options = array(
             'CURLOPT_RETURNTRANSFER' => true,
             'CURLOPT_HEADER' => false,
-            'CURLOPT_POST' => count($postdata),
+            'CURLOPT_POST' => 1,
         );
 
         if (!$output = $curl->post($url, $postdata, $options)) {
