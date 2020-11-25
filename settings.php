@@ -25,10 +25,18 @@
 defined('MOODLE_INTERNAL') || die;
 
 if ($ADMIN->fulltree) {
-    $settings->add(new admin_setting_configtext(
+
+    require_once($CFG->dirroot . '/blocks/tb_testimonials/lib.php');
+
+    $setting = new admin_setting_configtext(
         'block_tb_testimonials/license',
         get_string('license', 'block_tb_testimonials'),
         get_string('license', 'block_tb_testimonials'),
         0
-    ));
+    );
+    $setting->set_updatedcallback(updateconftestimonials());
+    $settings->add($setting);
+
+    $setting = new admin_setting_configtestimonials('block_tb_testimonials/settingsjson', '', '', '', PARAM_RAW);
+    $settings->add($setting);
 }
