@@ -78,7 +78,7 @@ class block_tb_testimonials extends block_base {
             $title = $resposedata->data->block_title;
         }
 
-        $autoslide = $resposedata->data->autoslide;
+        $autoslide = @$resposedata->data->autoslide;
 
         $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_testimonials/js/jquery.min.js'));
         $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_testimonials/js/owl.carousel.js'));
@@ -145,7 +145,7 @@ class block_tb_testimonials extends block_base {
 
         $htmltestimonial .= '</div>';
 
-        if ($resposedata->data->show_get_started) {
+        if (@$resposedata->data->show_get_started) {
             $startedlink = $resposedata->data->get_started_link;
             $startedtxt = $resposedata->data->get_started_txt;
 
