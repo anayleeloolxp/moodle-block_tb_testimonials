@@ -49,7 +49,7 @@
 }
 .block_tb_testimonials .content .title {
     float: left;
-    margin: 0 0 .5em;
+    margin: 0 0 0.5em;
     position: relative;
     width: 100%;
 }
@@ -86,19 +86,19 @@
 }
 
 [dir="ltr"] .block_tb_testimonials #box-or-lines,
-[dir="ltl"] [data-block='tb_testimonials'] #box-or-lines {
+[dir="ltl"] [data-block="tb_testimonials"] #box-or-lines {
     background: url([[pix:block_tb_testimonials|block_lines]]) no-repeat left top;
     float: right;
     height: 29px;
     overflow: hidden;
     text-indent: -999em;
-    transition: all .5s ease;
+    transition: all 0.5s ease;
     width: 30px;
 }
 .block_tb_testimonials #box-or-lines.grid,
-[data-block='tb_testimonials'] #box-or-lines.grid {
+[data-block="tb_testimonials"] #box-or-lines.grid {
     background-position: right top;
-    transition: all .5s ease;
+    transition: all 0.5s ease;
 }
 .block_tb_testimonials .tb_testimonials_list,
 .block_tb_testimonials .coursebox .course_image {
@@ -184,7 +184,7 @@
     padding-top: 10px;
 }
 .block_tb_testimonials .tb_testimonials_list:after {
-    content: '';
+    content: "";
     clear: both;
     width: 100%;
     display: block;
@@ -301,7 +301,6 @@
     background-size: cover;
 }
 .block_tb_testimonials .tb_testimonials_list .coursebox:not(.span12) .course_title .course_title {
-
     padding: 10px;
     margin-top: -55px;
     z-index: 1;
@@ -319,7 +318,7 @@
     font-family: "Maven Pro", Helvetica, Arial, sans-serif;
 }
 .block_tb_testimonials .tb_testimonials_list .coursebox:not(.span12) .course_title:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     width: 100%;
@@ -376,7 +375,6 @@
     transition: top 0.5s ease;
     color: #fff;
 }
-
 
 .block_tb_testimonials .tb_testimonials_list .coursebox:not(.span12):hover .teacher_names,
 .block_tb_testimonials .tb_testimonials_list .coursebox:not(.span12):focus .teacher_names {
@@ -448,7 +446,6 @@
     text-decoration: none;
 }
 
-
 .tb_testimonials_list .coursebox:not(.span12) .categorypath {
     position: absolute;
     color: #fff;
@@ -490,13 +487,13 @@
     margin-left: 0;
     max-width: 100%;
 }
-.tb_testimonials_list .coursebox.span6:nth-child(2n+1) {
+.tb_testimonials_list .coursebox.span6:nth-child(2n + 1) {
     margin-left: 0;
 }
-.tb_testimonials_list .coursebox.span4:nth-child(3n+1) {
+.tb_testimonials_list .coursebox.span4:nth-child(3n + 1) {
     margin-left: 0;
 }
-.tb_testimonials_list .coursebox.span3:nth-child(4n+1) {
+.tb_testimonials_list .coursebox.span3:nth-child(4n + 1) {
     margin-left: 0;
 }
 
@@ -533,7 +530,6 @@
 .block_tb_testimonials .coursebox.list .teacher_image_wrap {
     display: none;
 }
-
 
 @media screen and (max-width: 1400px) {
     .block_tb_testimonials .coursebox.list .image_wrap,
@@ -575,7 +571,7 @@
         font-size: 1.5rem;
     }
     .block_tb_testimonials .coursebox .categorypath {
-        font-size: .75rem;
+        font-size: 0.75rem;
     }
 }
 

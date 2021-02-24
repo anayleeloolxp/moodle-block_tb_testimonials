@@ -68,7 +68,7 @@ class block_tb_testimonials extends block_base {
 
         $leeloolxplicense = get_config('block_tb_testimonials')->license;
         $settingsjson = get_config('block_tb_testimonials')->settingsjson;
-        
+
         $resposedata = json_decode(base64_decode($settingsjson));
         $settingleeloolxp = $resposedata->data->testimonials_data;
 
@@ -83,12 +83,11 @@ class block_tb_testimonials extends block_base {
         $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_testimonials/js/jquery.min.js'));
         $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_testimonials/js/owl.carousel.js'));
 
-        if($autoslide == 1){
+        if ($autoslide == 1) {
             $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_testimonials/js/owlslider-auto.js'));
-        }else{
+        } else {
             $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_testimonials/js/owlslider.js'));
         }
-        
 
         $this->page->requires->css(new moodle_url($CFG->wwwroot . '/blocks/tb_testimonials/css/owl.carousel.min.css'));
         $this->page->requires->css(new moodle_url($CFG->wwwroot . '/blocks/tb_testimonials/css/owl.theme.default.min.css'));
@@ -112,11 +111,10 @@ class block_tb_testimonials extends block_base {
     public function get_testimonialcontent($resposedata) {
 
         $htmltestimonial = '<div class="tb_testimonials_container">';
-        
+
         $htmltestimonial .= '<div class="tb_testimonials owl-carousel owl-theme">';
 
-        foreach($resposedata->data->testimonials_data as $testimonial){
-
+        foreach ($resposedata->data->testimonials_data as $testimonial) {
             $htmltestimonial .= '<div id="testimonial_box1" class="testimonial_box">';
 
             $htmltestimonial .= '<div class="testimonial_title">';
@@ -140,14 +138,13 @@ class block_tb_testimonials extends block_base {
             $htmltestimonial .= '</div>';
 
             $htmltestimonial .= '</div>';
-
         }
 
         $htmltestimonial .= '</div>';
 
         if (@$resposedata->data->show_get_started) {
-            $startedlink = $resposedata->data->get_started_link;
-            $startedtxt = $resposedata->data->get_started_txt;
+            @$startedlink = $resposedata->data->get_started_link;
+            @$startedtxt = $resposedata->data->get_started_txt;
 
             $htmltestimonial .= '<div class="test_get_started"><a href="' . $startedlink . '">' . $startedtxt . '</a></div>';
         }
@@ -185,7 +182,7 @@ class block_tb_testimonials extends block_base {
         $config = get_config('block_tb_testimonials');
         return !empty($config->showwelcomearea);
     }
-    
+
     /**
      * Get settings from Leeloo
      */
