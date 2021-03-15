@@ -18,8 +18,7 @@
  * Version details
  *
  * @package    block_tb_testimonials
- * @copyright  1999 onwards Martin Dougiamas (http://dougiamas.com)
- * @copyright  2017 Mathew May <mathewm@hotmail.co.nz>
+ * @copyright  2020 Leeloo LXP (https://leeloolxp.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
