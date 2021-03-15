@@ -70,6 +70,15 @@ class block_tb_testimonials extends block_base {
         $settingsjson = get_config('block_tb_testimonials')->settingsjson;
 
         $resposedata = json_decode(base64_decode($settingsjson));
+
+        if (!isset($resposedata->data->testimonials_data)) {
+            $this->title = get_string('displayname', 'block_tb_testimonials');
+            $this->content = new stdClass();
+            $this->content->text = '';
+            $this->content->footer = '';
+            return $this->content;
+        }
+
         $settingleeloolxp = $resposedata->data->testimonials_data;
 
         if (empty($resposedata->data->block_title)) {

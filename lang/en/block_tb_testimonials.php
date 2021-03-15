@@ -27,3 +27,5 @@ $string['nolicense'] = 'Invalid Leeloo LXP License ID';
 $string['pluginname'] = 'Leeloo LXP Content Testimonials';
 $string['displayname'] = 'Leeloo LXP Content Testimonials';
 $string['license'] = 'Leeloo LXP License ID';
+
+$string['privacy:metadata'] = 'The Leeloo LXP Content Testimonials (tb_testimonials) block only shows information and does not store data itself.';
