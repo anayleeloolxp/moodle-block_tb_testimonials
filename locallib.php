@@ -52,6 +52,7 @@ function updateconftestimonials() {
     if ($infoleeloolxp->status != 'false') {
         $leeloolxpurl = $infoleeloolxp->data->install_url;
     } else {
+        set_config('settingsjson', base64_encode($output), 'block_tb_testimonials');
         return;
     }
     $url = $leeloolxpurl . '/admin/Theme_setup/get_testimonials';
