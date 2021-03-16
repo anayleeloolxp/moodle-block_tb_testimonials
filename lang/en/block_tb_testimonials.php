@@ -26,6 +26,7 @@
 $string['nolicense'] = 'Invalid Leeloo LXP License ID';
 $string['pluginname'] = 'Leeloo LXP Content Testimonials';
 $string['displayname'] = 'Leeloo LXP Content Testimonials';
+$string['blocktitle'] = 'Leeloo LXP Content Testimonials';
 $string['license'] = 'Leeloo LXP License ID';
 $string['tb_testimonials:addinstance'] = 'Add a new Leeloo LXP Content Testimonials block';
 $string['tb_testimonials:myaddinstance'] = 'Add a new Leeloo LXP Content Testimonials block to Dashboard';
