@@ -175,7 +175,6 @@
 /* START STYLE UPDATES */
 .block_tb_testimonials {
     position: relative;
-    z-index: 0;
 }
 .block_tb_testimonials .content {
     margin: 0;
