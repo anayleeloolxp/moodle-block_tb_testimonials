@@ -530,6 +530,31 @@
     display: none;
 }
 
+
+.testimonial_box {
+    text-align: center;
+}
+.tb_testimonials_container .testimonial_box .testimonial_img img {
+    width: auto;
+    margin: 15px auto 0;
+}
+.test_get_started a {
+    color: #fff !important;
+    background-color: #0f6fc5;
+    border-color: #0f6fc5;
+    padding: .375rem .75rem;
+    font-size: .9375rem;
+    display: inline-block;
+    font-weight: 400;
+}
+.test_get_started {
+    text-align: center;
+    margin: 30px 0 0;
+}
+
+
+
+
 @media screen and (max-width: 1400px) {
     .block_tb_testimonials .coursebox.list .image_wrap,
     .block_tb_testimonials .coursebox .course_image_embed {
