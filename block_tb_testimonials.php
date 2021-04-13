@@ -188,12 +188,4 @@ class block_tb_testimonials extends block_base {
         $config = get_config('block_tb_testimonials');
         return !empty($config->showwelcomearea);
     }
-
-    /**
-     * Get settings from Leeloo
-     */
-    public function cron() {
-        require_once($CFG->dirroot . '/blocks/tb_testimonials/lib.php');
-        updateconftestimonials();
-    }
 }
