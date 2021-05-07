@@ -72,7 +72,11 @@ class block_tb_testimonials extends block_base {
         $resposedata = json_decode(base64_decode($settingsjson));
 
         if (!isset($resposedata->data->testimonials_data)) {
-            $this->title = get_string('displayname', 'block_tb_testimonials');
+            if ($this->page->user_is_editing()) {
+                $this->title = get_string('displayname', 'block_tb_testimonials');
+            } else {
+                $this->title = '';
+            }
             $this->content = new stdClass();
             $this->content->text = '';
             $this->content->footer = '';
@@ -82,7 +86,11 @@ class block_tb_testimonials extends block_base {
         $settingleeloolxp = $resposedata->data->testimonials_data;
 
         if (empty($resposedata->data->block_title)) {
-            $title = get_string('displayname', 'block_tb_testimonials');
+            if ($this->page->user_is_editing()) {
+                $title = get_string('displayname', 'block_tb_testimonials');
+            } else {
+                $title = '';
+            }
         } else {
             $title = $resposedata->data->block_title;
         }
