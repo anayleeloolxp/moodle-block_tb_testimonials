@@ -98,12 +98,12 @@ class block_tb_testimonials extends block_base {
         $autoslide = @$resposedata->data->autoslide;
 
         $this->page->requires->jquery();
-        $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_testimonials/js/owl.carousel.js'));
+        $this->page->requires->js(new moodle_url('/blocks/tb_testimonials/js/owl.carousel.js'));
 
         if ($autoslide == 1) {
-            $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_testimonials/js/owlslider-auto.js'));
+            $this->page->requires->js(new moodle_url('/blocks/tb_testimonials/js/owlslider-auto.js'));
         } else {
-            $this->page->requires->js(new moodle_url($CFG->wwwroot . '/blocks/tb_testimonials/js/owlslider.js'));
+            $this->page->requires->js(new moodle_url('/blocks/tb_testimonials/js/owlslider.js'));
         }
 
         $this->title = $title;
