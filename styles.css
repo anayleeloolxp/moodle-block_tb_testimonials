@@ -530,7 +530,6 @@
     display: none;
 }
 
-
 .testimonial_box {
     text-align: center;
 }
@@ -539,7 +538,7 @@
     margin: 15px auto 0;
 }
 .test_get_started a {
-    color: #fff !important;
+    color: #fff !important; /* stylelint-disable-line declaration-no-important */
     background-color: #0f6fc5;
     border-color: #0f6fc5;
     padding: .375rem .75rem;
@@ -551,9 +550,6 @@
     text-align: center;
     margin: 30px 0 0;
 }
-
-
-
 
 @media screen and (max-width: 1400px) {
     .block_tb_testimonials .coursebox.list .image_wrap,
