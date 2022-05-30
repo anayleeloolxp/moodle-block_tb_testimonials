@@ -25,8 +25,6 @@
 
 namespace block_tb_testimonials\privacy;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Privacy Subsystem for block_tb_testimonials implementing null_provider.
  *
