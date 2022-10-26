@@ -83,7 +83,10 @@ class block_tb_testimonials extends block_base {
         }
 
         $settingleeloolxp = $resposedata->data->testimonials_data;
-
+        $summaryformatoptions = new stdClass();
+        $summaryformatoptions->noclean = false;
+        $summaryformatoptions->overflowdiv = false;
+        $summaryformatoptions->filter = true;
         if (empty($resposedata->data->block_title)) {
             if ($this->page->user_is_editing()) {
                 $title = get_string('displayname', 'block_tb_testimonials');
@@ -91,7 +94,7 @@ class block_tb_testimonials extends block_base {
                 $title = '';
             }
         } else {
-            $title = $resposedata->data->block_title;
+            $title = format_text($resposedata->data->block_title, 1, $summaryformatoptions);
         }
 
         $autoslide = @$resposedata->data->autoslide;
@@ -123,6 +126,11 @@ class block_tb_testimonials extends block_base {
      */
     public function get_testimonialcontent($resposedata) {
 
+        $summaryformatoptions = new stdClass();
+        $summaryformatoptions->noclean = false;
+        $summaryformatoptions->overflowdiv = false;
+        $summaryformatoptions->filter = true;
+
         $htmltestimonial = '<div class="tb_testimonials_container">';
 
         $htmltestimonial .= '<div class="tb_testimonials owl-carousel owl-theme">';
@@ -131,7 +139,7 @@ class block_tb_testimonials extends block_base {
             $htmltestimonial .= '<div id="testimonial_box1" class="testimonial_box">';
 
             $htmltestimonial .= '<div class="testimonial_title">';
-            $htmltestimonial .= $testimonial->testimonials_1_txt;
+            $htmltestimonial .= format_text($testimonial->testimonials_1_txt, 1, $summaryformatoptions);
             $htmltestimonial .= '</div>';
 
             $htmltestimonial .= '<div class="testimonial_img">';
@@ -141,11 +149,11 @@ class block_tb_testimonials extends block_base {
             $htmltestimonial .= '<div class="testimonial_text">';
 
             $htmltestimonial .= '<div class="testimonial_des">';
-            $htmltestimonial .= $testimonial->testimonials_1_cn;
+            $htmltestimonial .= format_text($testimonial->testimonials_1_cn, 1, $summaryformatoptions);
             $htmltestimonial .= '</div>';
 
             $htmltestimonial .= '<div class="testimonial_pos">';
-            $htmltestimonial .= $testimonial->testimonials_1_cp;
+            $htmltestimonial .= format_text($testimonial->testimonials_1_cp, 1, $summaryformatoptions);
             $htmltestimonial .= '</div>';
 
             $htmltestimonial .= '</div>';
@@ -157,7 +165,7 @@ class block_tb_testimonials extends block_base {
 
         if (@$resposedata->data->show_get_started) {
             @$startedlink = $resposedata->data->get_started_link;
-            @$startedtxt = $resposedata->data->get_started_txt;
+            @$startedtxt = format_text($resposedata->data->get_started_txt, 1, $summaryformatoptions);
 
             $htmltestimonial .= '<div class="test_get_started"><a href="' . $startedlink . '">' . $startedtxt . '</a></div>';
         }
